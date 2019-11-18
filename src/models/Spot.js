@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+const {URL} = require('../config/env')
 const SpotSchema = new mongoose.Schema({
 	thumbnail:{
 		type:String,
@@ -26,6 +26,6 @@ const SpotSchema = new mongoose.Schema({
 	}
 })
 SpotSchema.virtual('thumbnail_url').get(function(){
-	return `http://localhost:3001/files/${this.thumbnail}`
+	return `${URL}/files/${this.thumbnail}`
 })
 module.exports = mongoose.model('Spot',SpotSchema)

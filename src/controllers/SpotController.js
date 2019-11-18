@@ -15,9 +15,9 @@ class SpotContoller{
 	async store(req,res){
 		const {filename} = req.file
 		const {company,price,techs} = req.body
-		console.log(req.body);
+		
 		const {user_id} = req.headers
-		console.log(req.file);
+		
 		try{
 			const spot = await Spot.create({
 				user:user_id,
