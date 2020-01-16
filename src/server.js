@@ -16,7 +16,8 @@ mongoose.connect('mongodb+srv://adao:adao@cluster0-tbpz2.mongodb.net/CasdastroTa
 app.use(cors())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-app.use('/files',express.static(path.resolve(__dirname,'..','uploads')))
+app.use('/files',express.static(path.resolve(__dirname,'uploads')))
+console.log(path.resolve(__dirname,'uploads'))
 
 //rotas
 app.use(routes)
